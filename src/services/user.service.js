@@ -1,4 +1,4 @@
-let url = "https://jsonplaceholder.typecode.com/users";
+let url = "https://jsonplaceholder.typicode.com/users";
 
 const getUsers = () => {
     return fetch(url)
