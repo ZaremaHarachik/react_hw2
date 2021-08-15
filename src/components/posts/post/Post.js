@@ -6,7 +6,7 @@ export default function Post({id,title,body}) {
       <div>
         <p>
            <b>Id: {id}</b>
-          Title: {title}<br/>
+          -Title: {title}<br/>
           <b>Body:</b> {body}
         </p>
       </div>
