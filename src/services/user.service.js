@@ -1,13 +1,17 @@
-let url = "https://jsonplaceholder.typecode.com/users";
+import axios from 'axios';
+
+let config = { baseURL: 'https://jsonplaceholder.typicode.com/users',
+};
+let axiosInstance = axios.create(config);
 
 const getUsers = () => {
-    return fetch(url)
-    .then(value => value.json());
+    return axiosInstance.get('');
 };
-const getUser = async(id) => {
-    let user = await fetch(url + '/' + id)
-        .then(value => value.json());
-    return user
-}
+// const getUser = (id) => {
+//     return axiosInstance.get('/' + id);
+// };
 
-export {getUsers,getUser};
+export {getUsers};
+
+
+

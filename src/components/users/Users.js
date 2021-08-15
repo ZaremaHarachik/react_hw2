@@ -1,20 +1,22 @@
 import {useEffect, useState} from "react";
-import {getUsers} from "../../services/user.service";
 import User from "./user/User";
+import {getUsers} from "../../services/user.service";
+
+
 export default function Users() {
 
   let [users,setUsers] = useState([]);
 
-  useEffect(()=>{
+  useEffect(()=> {
 
-    getUsers().then(value => setUsers([...value]))
-      },[]);
+    getUsers().then(({data}) => setUsers([...data]));
 
+  },[]);
   return (
-    <div>
-      {
-        users.map((userItem)  => <User key={userItem.id} userItem={userItem}/>)
-      }
-    </div>
+      <div>
+        {
+          users.map(userItem  => <User key={userItem.id} {...userItem}/>)
+        }
+      </div>
   );
 }
